@@ -1,10 +1,9 @@
 package com.detroitlabs.dynamiccalendar.controller;
 
 import com.detroitlabs.dynamiccalendar.model.Quote;
+import com.detroitlabs.dynamiccalendar.model.qotd;
 import com.detroitlabs.dynamiccalendar.service.QuoteService;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,12 +15,13 @@ public class QuoteController {
     @ResponseBody
     @RequestMapping("/")
     public String displayQuote() {
-        Quote quote = quoteService.fetchQuote();
+        qotd quote = quoteService.fetchQuote();
+        Quote body = quote.getQuote();
+
 //        modelMap.put("quote", quote);
 //        return "quote";
         return
-                "Quote of the day:" + quote.getQotd_date() + "<br>" + quote.getAuthor() + "<br>" +
-                        quote.getBody();
+                "Quote of the day:" + quote.getQotd_date() + "<br>"+ body.getBody() +"<br>"+ body.getAuthor();
 
     }
 }
