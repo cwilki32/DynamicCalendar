@@ -9,7 +9,7 @@ class qotdTest {
     @Test
     void dateReformat() {
 
-        qotd testQotd = new qotd();
+        Qotd testQotd = new Qotd();
 
         String result = testQotd.dateReformat();
 

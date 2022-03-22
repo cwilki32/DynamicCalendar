@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class qotd {
+public class Qotd {
     Quote quote;
     String qotd_date;
 
