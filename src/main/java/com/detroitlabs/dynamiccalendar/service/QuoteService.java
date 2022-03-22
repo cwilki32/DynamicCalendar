@@ -1,20 +1,16 @@
 package com.detroitlabs.dynamiccalendar.service;
 
 import com.detroitlabs.dynamiccalendar.model.Quote;
-import org.springframework.http.*;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-
 @Component
-public class KanyeService {
+public class QuoteService {
 
     public Quote fetchQuote() {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(
-                "https://api.kanye.rest", Quote.class);
+                "https://favqs.com/api/qotd?App %232825=	5f2bb8d743613775b4cb8987e9961b2a", Quote.class);
 
     }
 
