@@ -3,6 +3,9 @@ package com.detroitlabs.dynamiccalendar.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class qotd {
@@ -23,10 +26,19 @@ public class qotd {
     public Quote getQuote() {
         return quote;
     }
+
     @JsonProperty("quote")
     public void setQuote(Quote quote) {
         this.quote = quote;
     }
+
+    public String dateReformat() {
+        LocalDateTime today = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E, MM/dd/yyyy");
+        String dateTimeString = formatter.format(today);
+        return dateTimeString;
+    }
+
 
 //    @JsonProperty("body")
 //    public String getBody() {

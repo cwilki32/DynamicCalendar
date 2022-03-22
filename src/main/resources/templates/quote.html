@@ -4,8 +4,23 @@
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
+<style>
+    body {
+        background-color: royalblue;
+        color: antiquewhite;
+        text-align: center;
+    }
+    img {
+        width:800px;
+        length: 800px;
+
+
+    }
+</style>
 <body>
-<h1>Test</h1>
-<span>Quote here</span>
+<h1 th:text="${date}"></h1>
+<h2 th:text="${quoteBody}"></h2>
+<h3 th:text="${author}"></h3>
+<img src="https://blankcalendarpages.com/printable_calendar/blank-18/March-2022-calendar-b18.jpg" alt = "calendar picture">
 </body>
 </html>
